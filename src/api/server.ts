@@ -1,16 +1,18 @@
-let token ='48400953024c1ba642f6b411aa98ba6bcd0ea0ece192dc55'
+let token ='db154cb389d1a619009169fd207e357838cd339d2169db49'
 
 // if you want to use brandon's site... remove token, use https://plankton-app-46k8b.ondigitalocean.app/api/contacts
 
 export const server_calls = {
     get:async () => {
-        const response = await fetch('https://api.lyrics.ovh/v1/artist/title',
+        const response = await fetch('https://alive-open-glitter.glitch.me/api/books',
         {
             method: 'GET',
             mode: 'cors',
             headers: {
                 'Content-Type' : 'application/json',
-                'Access-Control-Allow-Origin': '*',
+
+                'Access-Control-Request-Headers': 'x-access-token',
+                'x-access-token' : `Bearer ${token}`,  
             }
         });
 
@@ -22,13 +24,13 @@ export const server_calls = {
     },
 
     create: async (data: any = {}) => {
-        const response = await fetch('https://gabby-cooked-flute.glitch.me/api/contacts',
+        const response = await fetch('https://alive-open-glitter.glitch.me/api/books',
         {
             method: 'POST',
             mode: 'cors',
             headers: {
                 'Content-Type' : 'application/json',
-                'Access-Control-Allow-Origin': '*',
+
                 'Access-Control-Request-Headers': 'x-access-token',
                 'x-access-token' : `Bearer ${token}`,   
             },
@@ -43,13 +45,13 @@ export const server_calls = {
     },
 
     update: async (id:string, data: any = {}) => {
-        const response = await fetch(`https://gabby-cooked-flute.glitch.me/api/contacts/${id}`,
+        const response = await fetch(`https://alive-open-glitter.glitch.me/api/books/${id}`,
         {
             method: 'POST',
             mode: 'cors',
             headers: {
                 'Content-Type' : 'application/json',
-                'Access-Control-Allow-Origin': '*',
+                // 'Access-Control-Allow-Origin': '*',
                 'Access-Control-Request-Headers': 'x-access-token',
                 'x-access-token' : `Bearer ${token}`,
             },
@@ -64,13 +66,13 @@ export const server_calls = {
     },
 
     delete: async (id:string) => {
-        const response = await fetch(`https://gabby-cooked-flute.glitch.me/api/contacts/${id}`,
+        const response = await fetch(`https://alive-open-glitter.glitch.me/api/books/${id}`,
         {
             method: 'DELETE',
             mode: 'cors',
             headers: {
                 'Content-Type' : 'application/json',
-                'Access-Control-Allow-Origin': '*',
+                // 'Access-Control-Allow-Origin': '*',
                 'Access-Control-Request-Headers': 'x-access-token',
                 'x-access-token' : `Bearer ${token}`,
             }

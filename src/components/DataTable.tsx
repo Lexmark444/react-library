@@ -7,10 +7,10 @@ import { useGetData } from "../custom-hooks/FetchData";
 
 const columns: GridColDef[] = [
   { field: 'id', headerName: "ID", width: 90, hideable: true },
-  { field: 'name', headerName: 'Contact Name', flex: 1},
-  { field: 'email', headerName: 'Email', flex: 1},
-  { field: 'phone_number', headerName: 'Phone Number', flex: 1},
-  { field: 'address', headerName: 'Address', flex: 2},
+  { field: 'title', headerName: 'Title', flex: 1},
+  { field: 'author', headerName: 'Author', flex: 1},
+  { field: 'isbn', headerName: 'ISBN', flex: 1},
+  { field: 'genre', headerName: 'Genre', flex: 2},
 ]
 
 function DataTable() {
@@ -48,7 +48,7 @@ const deleteData = () => {
                     className="p-3 m-3 bg-slate-300 rounded hover:bg-slate-800 hover:text-white"
                     onClick={() => handleOpen()}
                 >
-                    Create New Contact
+                    Add New Book
                 </button>
             </div>
             <Button onClick={handleOpen} className="p-3 m-3 bg-slate-300 rounded hover:bg-slate-800 hover:text-white" >Update</Button>
@@ -57,7 +57,7 @@ const deleteData = () => {
         <div className={ open ? "hidden" : "container mx-10 my-5 flex flex-col"}
           style={{ height:450, width: '100%' }}
           >
-            <h2 className="p-3 bg-slate-300 my-2 rounded">My Contacts</h2>
+            <h2 className="p-3 bg-slate-300 my-2 rounded">Library Catalog</h2>
             <DataGrid rows={contactData} columns={columns} 
             // how to make page size a defined number
             autoPageSize
